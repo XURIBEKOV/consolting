@@ -26,14 +26,15 @@ const formSuccess = document.getElementById('formSuccess');
 // ---------- Telegram sozlamalari ----------
 // 1) @BotFather orqali bot yarating va TOKEN oling
 // 2) Botga /start yozing, keyin CHAT_ID ni oling (pastdagi izohga qarang)
-const TELEGRAM_BOT_TOKEN = '8915035349:AAHTqSra74zW3fxlq3drKlCNJB2qlTzHrk0';
-const TELEGRAM_CHAT_ID = '5656359114';
+const TELEGRAM_BOT_TOKEN = 'BOT_TOKEN_BU_YERGA';
+const TELEGRAM_CHAT_ID = 'CHAT_ID_BU_YERGA';
 
 async function sendToTelegram(data) {
   const text =
     `📩 Yangi ariza — Yo'lchi\n\n` +
     `👤 Ism: ${data.name}\n` +
     `📞 Telefon: ${data.phone}\n` +
+    `✈️ Telegram: ${data.telegram || '-'}\n` +
     `🌍 Mamlakat: ${data.country || 'Tanlanmagan'}\n` +
     `💬 Xabar: ${data.message || '-'}`;
 
@@ -89,6 +90,7 @@ form.addEventListener('submit', async (event) => {
     await sendToTelegram({
       name: nameInput.value.trim(),
       phone: phoneInput.value.trim(),
+      telegram: document.getElementById('telegram').value.trim(),
       country: document.getElementById('country').value,
       message: document.getElementById('message').value.trim()
     });
