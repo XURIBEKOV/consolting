@@ -26,8 +26,8 @@ const formSuccess = document.getElementById('formSuccess');
 // ---------- Telegram sozlamalari ----------
 // 1) @BotFather orqali bot yarating va TOKEN oling
 // 2) Botga /start yozing, keyin CHAT_ID ni oling (pastdagi izohga qarang)
-const TELEGRAM_BOT_TOKEN = 'BOT_TOKEN_BU_YERGA';
-const TELEGRAM_CHAT_ID = 'CHAT_ID_BU_YERGA';
+const TELEGRAM_BOT_TOKEN = '8915035349:AAHTqSra74zW3fxlq3drKlCNJB2qlTzHrk0';
+const TELEGRAM_CHAT_ID = '5656359114';
 
 async function sendToTelegram(data) {
   const text =
