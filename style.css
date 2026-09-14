@@ -1,13 +1,13 @@
 /* ---------- Tokens ---------- */
 :root{
-  --ink: #16223B;
-  --ink-soft: #45527A;
-  --paper: #FAF9F5;
+  --ink: #1B2A41;
+  --ink-soft: #4C5A75;
+  --paper: #F7F4EB;
   --panel: #FFFFFF;
-  --gold: #B8862B;
-  --gold-soft: #E7D5AC;
-  --teal: #285C52;
-  --line: #E1DCC9;
+  --gold: #D9954B;
+  --gold-soft: #F0D9B0;
+  --teal: #2E7A66;
+  --line: #E4DECB;
   --radius: 3px;
   --max: 1120px;
 }
