@@ -15,6 +15,18 @@ mainNav.querySelectorAll('a').forEach((link) => {
   });
 });
 
+// ---------- Mamlakat tanlash (pill tugmalar) ----------
+const countryPills = document.getElementById('countryPills');
+const countryInput = document.getElementById('country');
+
+countryPills.querySelectorAll('.pill').forEach((pill) => {
+  pill.addEventListener('click', () => {
+    countryPills.querySelectorAll('.pill').forEach((p) => p.classList.remove('active'));
+    pill.classList.add('active');
+    countryInput.value = pill.dataset.value;
+  });
+});
+
 // ---------- Contact form validation ----------
 const form = document.getElementById('contactForm');
 const nameInput = document.getElementById('name');
@@ -33,6 +45,7 @@ async function sendToTelegram(data) {
   const text =
     `📩 Yangi ariza — Yo'lchi\n\n` +
     `👤 Ism: ${data.name}\n` +
+    `🎂 Yosh: ${data.age || '-'}\n` +
     `📞 Telefon: ${data.phone}\n` +
     `✈️ Telegram: ${data.telegram || '-'}\n` +
     `🌍 Mamlakat: ${data.country || 'Tanlanmagan'}\n` +
@@ -89,6 +102,7 @@ form.addEventListener('submit', async (event) => {
   try {
     await sendToTelegram({
       name: nameInput.value.trim(),
+      age: document.getElementById('age').value,
       phone: phoneInput.value.trim(),
       telegram: document.getElementById('telegram').value.trim(),
       country: document.getElementById('country').value,
@@ -97,6 +111,8 @@ form.addEventListener('submit', async (event) => {
 
     formSuccess.hidden = false;
     form.reset();
+    countryPills.querySelectorAll('.pill').forEach((p) => p.classList.remove('active'));
+    countryInput.value = '';
     setTimeout(() => { formSuccess.hidden = true; }, 5000);
   } catch (err) {
     phoneError.textContent = '';
@@ -106,3 +122,4 @@ form.addEventListener('submit', async (event) => {
     submitBtn.textContent = 'Yuborish';
   }
 });
+console.log("sallom")
