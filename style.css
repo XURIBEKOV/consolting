@@ -279,6 +279,18 @@ a {
   font-weight: 600;
   font-size: .95rem;
   margin-bottom: .6em;
+  display: flex;
+   align-items: center;
+  /* justify-content: center; */
+}
+.hero-kicker i {
+   width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--teal);
+  display: block;
+ margin: 10px;
+ 
 }
 
 .hero-copy {
@@ -358,6 +370,7 @@ a {
   color: var(--ink);
   box-shadow: 0 8px 20px -12px rgba(27, 42, 65, .4);
 }
+
 
 .live-badge i {
   width: 7px;
@@ -453,6 +466,52 @@ section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.service-sena {
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.contact-visual .img-slot {
+  aspect-ratio: 280/240;
+}
+
+.img-slider .slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+
+.img-slider .slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slider-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.slider-dots .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, .45);
+  cursor: pointer;
+}
+
+.slider-dots .dot.is-active {
+  background: var(--gold);
 }
 
 .service-card {
