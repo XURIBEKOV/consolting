@@ -65,17 +65,31 @@ h3 {
   font-weight: 600;
   border-radius: 200px;
 }
+h4{
+  color: var(--teal);
+  margin: 5px;
+}
+.sena-count {
+  font-size:10px;
+}
 
 p {
   margin: 0 0 1em;
   color: white;
   max-width: 62ch;
+  
 }
 
 h1 em,
 h2 em {
   font-style: italic;
-  color: var(--teal);
+  color: var(--gold);
+}
+h3 em {
+  color: var(--gold);
+}
+.hero-copy h1 {
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .section-eyebrow {
@@ -1018,9 +1032,8 @@ button:focus-visible {
   }
 
   .hero-visual {
-    order: -1;
     max-width: 220px;
-    margin: 0 auto;
+    margin: 24px auto 0;
   }
 
   .service-grid {
