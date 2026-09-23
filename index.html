@@ -62,7 +62,7 @@
           <img src="photos/main.jpg" alt="Yo'lchi talabasi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-          
+            <span>photos/main.jpg</span>
           </div>
         </div>
       </div>
@@ -157,6 +157,7 @@
           </span>
           <h3>ITALIYA</h3>
           <p>Byudjetingiz, ixtisosligingiz va maqsadingizga mos universitetlar ro'yxatini birga tuzamiz.</p>
+          <a href="#aloqa" class="btn btn-ghost service-apply-btn">Ariza topshirish</a>
         </article>
 
         <article class="service-card">
@@ -165,6 +166,7 @@
           </span>
           <h3>GERMANIYA</h3>
           <p>Motivatsion xat, tavsiyanoma va akademik ma'lumotnomalarni universitet talabiga moslab tayyorlaymiz.</p>
+          <a href="#aloqa" class="btn btn-ghost service-apply-btn">Ariza topshirish</a>
         </article>
 
         <article class="service-card">
@@ -173,6 +175,7 @@
           </span>
           <h3>KOREA</h3>
           <p>Kerakli ball va topshirish muddatlarini hisobga olib, tayyorgarlik rejasini tuzib beramiz.</p>
+          <a href="#aloqa" class="btn btn-ghost service-apply-btn">Ariza topshirish</a>
         </article>
 
         <article class="service-card">
@@ -182,6 +185,7 @@
           <h3>AMERIKA & AVTRALYA</h3>
           <p>Sizga mos moliyaviy yordam va stipendiya dasturlarini topib, arizasini birga topshiramiz.</p>
           <P>COMING SOON</P>
+          <a href="#aloqa" class="btn btn-ghost service-apply-btn">Ariza topshirish</a>
         </article>
 
       </div>
@@ -191,39 +195,34 @@
   <section class="about" id="biz-haqimizda">
     <div class="wrap about-grid">
       <!-- Jamoa rasmingiz: rasmlar/jamoa.jpg -->
-      <div class="img-slot about-visual img-slider" id="aboutSlider">
-        <div class="slide is-active">
-          <img src="photos/about1.jpg" alt="Yo'lchi jamoasi 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+      <div class="img-slot about-visual img-fade-slider" id="aboutSlider">
+        <div class="fade-slide is-active">
+          <img src="photos/about4.jpg" alt="Yo'lchi jamoasi 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span>photos/about1.jpg</span>
+            <span>photos/about4.jpg</span>
           </div>
         </div>
-        <div class="slide">
+        <div class="fade-slide">
           <img src="photos/about2.jpg" alt="Yo'lchi jamoasi 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>photos/about2.jpg</span>
           </div>
         </div>
-        <div class="slide">
+        <div class="fade-slide">
           <img src="photos/about3.jpg" alt="Yo'lchi jamoasi 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>photos/about3.jpg</span>
           </div>
         </div>
-        <div class="slider-dots" role="tablist" aria-label="Rasm slayderi">
-          <button type="button" class="dot is-active" data-index="0" aria-label="1-rasm"></button>
-          <button type="button" class="dot" data-index="1" aria-label="2-rasm"></button>
-          <button type="button" class="dot" data-index="2" aria-label="3-rasm"></button>
-        </div>
       </div>
       <div class="about-content">
        
         <h2>Biz haqimizda</h2>
-        <p class="about-lead">Yo'lchi 2019-yildan beri Andijondagi talabalarga chet elda ta'lim olishda hamrohlik qilib kelmoqda.</p>
-        <p>Jamoamiz — o'zi ham chet elda o'qigan konsultantlardan iborat. Shu sababli har bir talabaning tashvishini ichdan bilamiz: qaysi universitet to'g'ri tanlov, hujjat qanday ko'rinishi kerak, va viza suhbatida nima so'rashlarini.</p>
+        <p class="about-lead">Barcha jarayonlar 7-yildan oshiq tajribasi bor ekspertlar tomonidan olib boriladi.</p>
+        <p>Jamoamiz- o’zi ham chet elda o’qigan konsultantlardan iborat. Shu sababli har bir talabaning tashvishini ichidan bilamiz: qaysi universitet to’g’ri tanlov, hujjat qanday to’g’ri taxlanadi va viza suhbatida nimalar so’raladi.</p>
         <dl class="about-stats">
           <div><dt>7</dt><dd>yillik tajriba</dd></div>
           <div><dt>260+</dt><dd>muvaffaqiyatli qabul</dd></div>
@@ -245,32 +244,32 @@
         <article class="review-card">
           <div class="review-stars">★★★★★</div>
           <p>"Hujjatlarning har biri aniq tushuntirildi, hech narsa noaniq qolmadi. Viza suhbatiga ham to'liq tayyor bo'ldim."</p>
-          <div class="review-who"><strong>N.N.</strong><span>F-1 viza · namuna</span></div>
+          <div class="review-who"><strong>S.T.</strong><span>F-1 viza · namuna</span></div>
         </article>
         <article class="review-card">
           <div class="review-stars">★★★★★</div>
           <p>"Universitet tanlashda ko'p ikkilanardim, ular byudjetimga mosini tez topib berishdi."</p>
-          <div class="review-who"><strong>N.N.</strong><span>Qabul · namuna</span></div>
+          <div class="review-who"><strong>M.B.</strong><span>Qabul · namuna</span></div>
         </article>
         <article class="review-card">
           <div class="review-stars">★★★★★</div>
           <p>"Grant izlashda yordam berishdi — o'zim bunday imkoniyat borligini bilmasdim ham."</p>
-          <div class="review-who"><strong>N.N.</strong><span>Stipendiya · namuna</span></div>
+          <div class="review-who"><strong>O.Y.</strong><span>Stipendiya · namuna</span></div>
         </article>
          <article class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p>"Grant izlashda yordam berishdi — o'zim bunday imkoniyat borligini bilmasdim ham."</p>
-          <div class="review-who"><strong>N.N.</strong><span>Stipendiya · namuna</span></div>
+          <p>"Sapienza kabi top-universitetga kirish va uning ustiga yiliga 8,000€ stipendiya yutib olish — men uchun shunchaki orzu edi! Hujjatlarni yig'ishni boshlaganimda juda ko'p ikkilanuvdim, lekin ushbu jamoa har bir qadamimda professional yo'l ko'rsatdi. Vizam ham muammosiz chiqdi!Rahmat sizlarga, siz haqiqiy professionalssiz! "</p>
+          <div class="review-who"><strong >Sapienza Universiteti talabasi</strong><span>Stipendiya · namuna</span></div>
         </article>
          <article class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p>"Grant izlashda yordam berishdi — o'zim bunday imkoniyat borligini bilmasdim ham."</p>
-          <div class="review-who"><strong>N.N.</strong><span>Stipendiya · namuna</span></div>
+          <p>"Latviyaga viza oldim va o'qishga kirdim. Riga shahridan qabul xati va elchixonadan vizamni olgunimgacha har bir qadamda yordam berishdi. Hatto hujjatlarim bilan bog'liq murakkab joylarini ham toliq bajarib berishti."</p>
+          <div class="review-who"><strong>RTU Universiteti talabasi</strong><span>Stipendiya · namuna</span></div>
         </article>
          <article class="review-card">
           <div class="review-stars">★★★★★</div>
-          <p>"Grant izlashda yordam berishdi — o'zim bunday imkoniyat borligini bilmasdim ham."</p>
-          <div class="review-who"><strong>N.N.</strong><span>Stipendiya · namuna</span></div>
+          <p>""Italiyadagi universitetga grant asosida o‘qishga kirdim. Hujjat topshirishdan boshlab, universitetdan qabul xatini olishgacha bo‘lgan jarayonda juda ko‘p savollarim bor edi. Viza jarayonida bergan maslahatlari juda qo‘l keldi. Natijada barcha jarayonni muvaffaqiyatli yakunlab, o‘qishimni boshladim. Rahmat sizlarga!"</p>
+          <div class="review-who"><strong>Italiya universiteti talabasi</strong><span>Stipendiya · namuna</span></div>
         </article>
       </div>
     </div>
@@ -340,10 +339,10 @@
       <div class="contact-visual">
         <!-- Ofis/manzil rasmingiz: rasmlar/ofis.jpg -->
         <div class="img-slot">
-          <img src="photos/contact.jpg" alt="Yo'lchi ofisi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="photos/contacttt.png" alt="Yo'lchi ofisi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span>rasmlar/ofis.jpg</span>
+            <span>photos/contact.jpg</span>
           </div>
         </div>
         <ul class="contact-details contact-channels">
@@ -423,10 +422,25 @@
   </div>
   <div class="wrap footer-bottom">
     <span>&copy; 2026 Yo'lchi konsalting</span>
-    <span>Barcha huquqlar himoyalangan</span>
+    <span>CO-FOUNDER · XURIBEKOV MUXAMMADYUSUF  </span>
   </div>
 </footer>
 
 <script src="script.js"></script>
+<script>
+  (function () {
+    var slider = document.getElementById('aboutSlider');
+    if (!slider) return;
+    var slides = slider.querySelectorAll('.fade-slide');
+    var current = 0;
+
+    setInterval(function () {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, 3500);
+  })();
+</script>
+
 </body>
 </html>
