@@ -785,7 +785,9 @@ section[id] {
 
 /* Raqam — faqat bezak (CSS counter) */
 .service-grid .service-card {
-  counter-increment: svc;
+  /* counter-increment: svc ; */
+
+  
 }
 
 .service-grid .service-card::after {
@@ -798,6 +800,9 @@ section[id] {
   letter-spacing: .1em;
   color: var(--ink-mute);
   transition: color .3s ease;
+
+  display: none;
+  
 }
 
 .service-grid .service-card:hover::after {
