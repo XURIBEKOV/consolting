@@ -3,13 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A0912">
 <title>Yo'lchi — Chet elda ta'lim konsalting</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script>
+  // Animatsiyalar faqat JS ishlasa yoqiladi; JS ishlamasa kontent har doim ko'rinib turadi.
+  document.documentElement.classList.add('js');
+  setTimeout(function () {
+    if (!window.__yolchiReady) document.documentElement.classList.remove('js');
+  }, 3000);
+</script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="site-header">
   <div class="wrap header-inner">
@@ -29,8 +39,8 @@
       <a href="#fikrlar">Fikrlar</a>
       <a href="#aloqa">Aloqa</a>
     </nav>
-    <a href="#aloqa" class="btn btn-ghost header-cta">Bog'lanish</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menyuni ochish" aria-expanded="false">
+    <a href="#aloqa" class="btn btn-primary header-cta">Bog'lanish</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menyuni ochish" aria-expanded="false" aria-controls="mainNav">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -40,29 +50,35 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-orbs" aria-hidden="true">
+      <div class="hero-orb hero-orb--a"></div>
+      <div class="hero-orb hero-orb--b"></div>
+    </div>
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <p class="hero-kicker"><i></i>EST. 2019 <h3><em> Chet elda ta'lim konsalting</em></h3></p>
-          
-        <h1>Yo'lchi -   <em>kelajak</em> sari yo'lingiz!</h1>
-        <p class="hero-lead">Bizning konsalting kompaniyamiz Yevropa (Italiya, Latviya, Polsha), AQSh va Avstraliyadagi nufuzli universitetlarga qabul jarayonidan tortib, viza hujjatlarini rasmiylashtirishgacha bo‘lgan barcha bosqichlarda professional yordam beradi.</p>
-        <div class="hero-actions">
-          <a href="#aloqa" class="btn btn-ghost">Bog'lanish</a>
+        <p class="hero-kicker" data-reveal><i></i>EST. 2019</p>
+        <h3 class="hero-tagline" data-reveal><em>Chet elda ta'lim konsalting</em></h3>
+        <h1 data-reveal>Yo'lchi -   <em>kelajak</em> sari yo'lingiz!</h1>
+        <p class="hero-lead" data-reveal>Bizning konsalting kompaniyamiz Yevropa (Italiya, Latviya, Polsha), AQSh va Avstraliyadagi nufuzli universitetlarga qabul jarayonidan tortib, viza hujjatlarini rasmiylashtirishgacha bo‘lgan barcha bosqichlarda professional yordam beradi.</p>
+        <div class="hero-actions" data-reveal>
+          <a href="#aloqa" class="btn btn-primary">Bog'lanish</a>
           <a href="#jarayon" class="btn btn-ghost">Narxlar</a>
         </div>
-        <dl class="hero-stats">
+        <dl class="hero-stats" data-reveal>
           <div><dt>260+</dt><dd>talaba joylashtirildi</dd></div>
           <div><dt>40+</dt><dd>hamkor universitet</dd></div>
           <div><dt>14</dt><dd>mamlakat</dd></div>
         </dl>
       </div>
-      <div class="hero-visual">
-        <span class="live-badge"><i></i> KOLIZEY</span>
-        <div class="img-slot hero-photo">
-          <img src="photos/main.jpg" alt="Yo'lchi talabasi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback">
-            <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
-            <span>photos/main.jpg</span>
+      <div class="hero-visual" data-reveal="zoom">
+        <div class="hero-frame">
+          <span class="live-badge"><i></i> KOLIZEY</span>
+          <div class="img-slot hero-photo">
+            <img src="photos/main.jpg" alt="Yo'lchi talabasi" fetchpriority="high" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="img-fallback">
+              <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>photos/main.jpg</span>
+            </div>
           </div>
         </div>
       </div>
@@ -74,26 +90,27 @@
     <div class="wrap">
 
       <div class="services-intro">
-        <div class="services-motivation">
+        <div class="services-motivation" data-reveal="left">
           <h3>Har bir yo'l bir qarordan boshlanadi.</h3>
           <p>Chet elda o'qish — faqat hujjat emas, kelajagingiz haqidagi qaror. Minglab talaba shu qadamni qo'yishdan qo'rqib, imkoniyatni qo'ldan boy beradi. Biz bilan bu yo'l aniq, tushunarli va yolg'iz emassiz.</p>
-          <a href="#aloqa" class="btn btn-ghost">Birinchi qadamni tashlang</a>
+          <a href="#aloqa" class="btn btn-primary">Birinchi qadamni tashlang</a>
         </div>
-        <div class="services-video">
-          <video class="intro-video" controls preload="none" poster="photos/videoposter.jpg">
-            <source src="photos/procces.mp4" type="video/mp4">
-          </video>
+        <div class="services-video" data-reveal="right">
+          <div class="video-frame">
+            <video class="intro-video" controls preload="none" poster="photos/videoposter.jpg">
+              <source src="photos/procces.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
 
-      <div class="section-head">
-       
+      <div class="section-head" data-reveal>
         <h2>Xizmatlar</h2>
         <p>Har bir bosqichda kerakli aniq yordam — ortiqcha va'dasiz.</p>
       </div>
-      <div class="service-grid">
+      <div class="service-grid" data-stagger>
 
-        <article class="service-card">
+        <article class="service-card" data-reveal>
           <span class="service-icon">
             <svg viewBox="0 0 32 32"><path d="M16 6 L28 12 L16 18 L4 12 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 15 v7 c0 2 3 4 7 4 s7 -2 7 -4 v-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
           </span>
@@ -101,7 +118,7 @@
           <p>Byudjetingiz, ixtisosligingiz va maqsadingizga mos universitetlar ro'yxatini birga tuzamiz.</p>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-reveal>
           <span class="service-icon">
             <svg viewBox="0 0 32 32"><rect x="7" y="4" width="18" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="11" y1="11" x2="21" y2="11" stroke="currentColor" stroke-width="1.6"/><line x1="11" y1="16" x2="21" y2="16" stroke="currentColor" stroke-width="1.6"/><line x1="11" y1="21" x2="17" y2="21" stroke="currentColor" stroke-width="1.6"/></svg>
           </span>
@@ -109,7 +126,7 @@
           <p>Motivatsion xat, tavsiyanoma va akademik ma'lumotnomalarni universitet talabiga moslab tayyorlaymiz.</p>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-reveal>
           <span class="service-icon">
             <svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="20.5" y1="20.5" x2="27" y2="27" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           </span>
@@ -117,7 +134,7 @@
           <p>Kerakli ball va topshirish muddatlarini hisobga olib, tayyorgarlik rejasini tuzib beramiz.</p>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-reveal>
           <span class="service-icon">
             <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 10 v6 l4 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
           </span>
@@ -125,7 +142,7 @@
           <p>Sizga mos moliyaviy yordam va stipendiya dasturlarini topib, arizasini birga topshiramiz.</p>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-reveal>
           <span class="service-icon">
             <svg viewBox="0 0 32 32"><rect x="6" y="5" width="20" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="16" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="10" y1="23" x2="22" y2="23" stroke="currentColor" stroke-width="1.6"/></svg>
           </span>
@@ -133,7 +150,7 @@
           <p>Anketa to'ldirish, moliyaviy hujjatlar va suhbatga tayyorgarlikda qadam-baqadam kuzatib boramiz.</p>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" data-reveal>
           <span class="service-icon">
             <svg viewBox="0 0 32 32"><path d="M4 18 L24 7 L28 11 L17 18 L22 27 L18 27 L12 20 L7 23 L7 18 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
           </span>
@@ -148,77 +165,77 @@
   <!-- Narxlar (real sequence -> numbered) -->
   <section class="process" id="jarayon">
     <div class="wrap">
-       <h2>Narxlar</h2>
-     <div class="service-sena">
+      <div class="section-head" data-reveal>
+        <h2>Narxlar</h2>
+      </div>
+      <div class="service-sena" data-stagger>
 
-        <article class="service-card">
-          <span class="service-icon">
-            <img src="photos/italiyflagg.png" alt=""> <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 10 v6 l4 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <article class="service-card price-card" data-reveal>
+          <span class="service-icon flag">
+            <img src="photos/italiyflagg.png" alt="Italiya bayrog'i" loading="lazy">
           </span>
           <h3>ITALIYA</h3>
-          <p class="sena-count"><h4>549$</h4>vizagacha</p>
+          <div class="price sena-count"><strong>549$</strong><span>vizagacha</span></div>
           <p>Byudjetingiz, ixtisosligingiz va maqsadingizga mos universitetlar ro'yxatini birga tuzamiz.</p>
           <a href="#aloqa" class="btn btn-ghost service-apply-btn">Ariza topshirish</a>
         </article>
 
-        <article class="service-card">
-        <span class="service-icon">
-           <img src="photos/latviyaflag.png" alt=""> <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 10 v6 l4 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <article class="service-card price-card" data-reveal>
+          <span class="service-icon flag">
+            <img src="photos/latviyaflag.png" alt="Latviya bayrog'i" loading="lazy">
           </span>
           <h3>LATVIYA</h3>
-           <p><h4>549$</h4>vizagacha</p>
+          <div class="price"><strong>549$</strong><span>vizagacha</span></div>
           <p>Motivatsion xat, tavsiyanoma va akademik ma'lumotnomalarni universitet talabiga moslab tayyorlaymiz.</p>
           <a href="#aloqa" class="btn btn-ghost service-apply-btn">Ariza topshirish</a>
         </article>
 
-        
-
-        <article class="service-card">
-          <span class="service-icon">
-           <img src="photos/australia-flag-icon-png-15.png" alt=""> <circle cx="16" cy="16" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 10 v6 l4 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <article class="service-card price-card" data-reveal>
+          <span class="service-icon flag">
+            <img src="photos/australia-flag-icon-png-15.png" alt="Avstraliya bayrog'i" loading="lazy">
           </span>
           <h3>AMERIKA & AVTRALYA</h3>
           <p>Sizga mos moliyaviy yordam va stipendiya dasturlarini topib, arizasini birga topshiramiz.</p>
-          <P>COMING SOON</P>
+          <p class="soon-badge">COMING SOON</p>
           <a href="#aloqa" class="btn btn-ghost service-apply-btn">Ariza topshirish</a>
         </article>
 
       </div>
+    </div>
   </section>
 
   <!-- BIZ HAQIMIZDA -->
   <section class="about" id="biz-haqimizda">
     <div class="wrap about-grid">
       <!-- Jamoa rasmingiz: rasmlar/jamoa.jpg -->
-      <div class="img-slot about-visual img-fade-slider" id="aboutSlider">
+      <div class="img-slot about-visual img-fade-slider" id="aboutSlider" data-reveal="left">
         <div class="fade-slide is-active">
-          <img src="photos/about4.jpg" alt="Yo'lchi jamoasi 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="photos/about4.jpg" alt="Yo'lchi jamoasi 1" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>photos/about4.jpg</span>
           </div>
         </div>
         <div class="fade-slide">
-          <img src="photos/about3.JPG" alt="Yo'lchi jamoasi 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="photos/about3.JPG" alt="Yo'lchi jamoasi 2" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>photos/about2.jpg</span>
           </div>
         </div>
         <div class="fade-slide">
-          <img src="photos/about2.JPG" alt="Yo'lchi jamoasi 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="photos/about2.JPG" alt="Yo'lchi jamoasi 3" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>photos/about3.jpg</span>
           </div>
         </div>
       </div>
-      <div class="about-content">
-       
-        <h2>Biz haqimizda</h2>
-        <p class="about-lead">Barcha jarayonlar 7-yildan oshiq tajribasi bor ekspertlar tomonidan olib boriladi.</p>
-        <p>Jamoamiz- o’zi ham chet elda o’qigan konsultantlardan iborat. Shu sababli har bir talabaning tashvishini ichidan bilamiz: qaysi universitet to’g’ri tanlov, hujjat qanday to’g’ri taxlanadi va viza suhbatida nimalar so’raladi.</p>
-        <dl class="about-stats">
+      <div class="about-content" data-stagger>
+        <h2 data-reveal>Biz haqimizda</h2>
+        <p class="about-lead" data-reveal>Barcha jarayonlar 7-yildan oshiq tajribasi bor ekspertlar tomonidan olib boriladi.</p>
+        <p data-reveal>Jamoamiz- o’zi ham chet elda o’qigan konsultantlardan iborat. Shu sababli har bir talabaning tashvishini ichidan bilamiz: qaysi universitet to’g’ri tanlov, hujjat qanday to’g’ri taxlanadi va viza suhbatida nimalar so’raladi.</p>
+        <dl class="about-stats" data-reveal>
           <div><dt>7</dt><dd>yillik tajriba</dd></div>
           <div><dt>260+</dt><dd>muvaffaqiyatli qabul</dd></div>
           <div><dt>91%</dt><dd>viza olish ko'rsatkichi</dd></div>
@@ -230,25 +247,24 @@
   <!-- FIKRLAR -->
   <section class="reviews" id="fikrlar">
     <div class="wrap">
-      <div class="section-head">
-      
+      <div class="section-head" data-reveal>
         <h2>Ular nima deyishadi</h2>
         <p>Namuna sifatida keltirilgan fikrlar.</p>
       </div>
-      <div class="review-grid">
-        
-         <article class="review-card">
-          <div class="review-stars">★★★★★</div>
+      <div class="review-grid" data-stagger>
+
+        <article class="review-card" data-reveal>
+          <div class="review-stars" aria-label="5 yulduz">★★★★★</div>
           <p>"Sapienza kabi top-universitetga kirish va uning ustiga yiliga 8,000€ stipendiya yutib olish — men uchun shunchaki orzu edi! Hujjatlarni yig'ishni boshlaganimda juda ko'p ikkilanuvdim, lekin ushbu jamoa har bir qadamimda professional yo'l ko'rsatdi. Vizam ham muammosiz chiqdi!Rahmat sizlarga, siz haqiqiy professionalssiz! "</p>
-          <div class="review-who"><strong >Sapienza Universiteti talabasi</strong><span>Stipendiya · namuna</span></div>
+          <div class="review-who"><strong>Sapienza Universiteti talabasi</strong><span>Stipendiya · namuna</span></div>
         </article>
-         <article class="review-card">
-          <div class="review-stars">★★★★★</div>
+        <article class="review-card" data-reveal>
+          <div class="review-stars" aria-label="5 yulduz">★★★★★</div>
           <p>"Latviyaga viza oldim va o'qishga kirdim. Riga shahridan qabul xati va elchixonadan vizamni olgunimgacha har bir qadamda yordam berishdi. Hatto hujjatlarim bilan bog'liq murakkab joylarini ham toliq bajarib berishti."</p>
           <div class="review-who"><strong>RTU Universiteti talabasi</strong><span>Stipendiya · namuna</span></div>
         </article>
-         <article class="review-card">
-          <div class="review-stars">★★★★★</div>
+        <article class="review-card" data-reveal>
+          <div class="review-stars" aria-label="5 yulduz">★★★★★</div>
           <p>""Italiyadagi universitetga grant asosida o‘qishga kirdim. Hujjat topshirishdan boshlab, universitetdan qabul xatini olishgacha bo‘lgan jarayonda juda ko‘p savollarim bor edi. Viza jarayonida bergan maslahatlari juda qo‘l keldi. Natijada barcha jarayonni muvaffaqiyatli yakunlab, o‘qishimni boshladim. Rahmat sizlarga!"</p>
           <div class="review-who"><strong>Italiya universiteti talabasi</strong><span>Stipendiya · namuna</span></div>
         </article>
@@ -259,14 +275,13 @@
   <!-- NATIJALAR -->
   <section class="results">
     <div class="wrap">
-      <div class="section-head">
-       
+      <div class="section-head" data-reveal>
         <h2>Sokin ish. Baland natijalar.</h2>
       </div>
-      <dl class="results-grid">
-        <div><dt>260+</dt><dd>talaba — 2019-yildan beri</dd></div>
-        <div><dt>40+</dt><dd>hamkor universitet</dd></div>
-        <div><dt>91%</dt><dd>viza olish ko'rsatkichi</dd></div>
+      <dl class="results-grid" data-stagger>
+        <div data-reveal><dt>260+</dt><dd>talaba — 2019-yildan beri</dd></div>
+        <div data-reveal><dt>40+</dt><dd>hamkor universitet</dd></div>
+        <div data-reveal><dt>91%</dt><dd>viza olish ko'rsatkichi</dd></div>
       </dl>
     </div>
   </section>
@@ -274,8 +289,8 @@
   <!-- ALOQA -->
   <section class="contact" id="aloqa">
     <div class="wrap contact-grid">
-      <form class="contact-form" id="contactForm" novalidate>
- 
+      <form class="contact-form" id="contactForm" novalidate data-reveal="left">
+
         <h2>Bepul konsultatsiyaga yoziling</h2>
         <p>Formani to'ldiring — 1 ish kuni ichida siz bilan bog'lanamiz.</p>
         <div class="field">
@@ -297,29 +312,26 @@
           <input type="number" id="age" name="age" min="14" max="60" placeholder="masalan, 19">
         </div>
         <div class="field">
-          <label>Qiziqqan mamlakat</label>
-          <div class="pill-group" id="countryPills" role="radiogroup">
-            <button type="button" class="pill" data-value="Italiya">🇮🇹 Italiya</button>
-            <button type="button" class="pill" data-value="Latviya">🇱🇻 Latviya</button>
-            <button type="button" class="pill" data-value="Italiya">usa
-              AMERIKA
-            </button>
-           
+          <label id="countryLabel">Qiziqqan mamlakat</label>
+          <div class="pill-group" id="countryPills" role="group" aria-labelledby="countryLabel">
+            <button type="button" class="pill" data-value="Italiya"><span class="pill-flag" aria-hidden="true"><svg viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice"><rect width="1" height="2" fill="#009246"/><rect x="1" width="1" height="2" fill="#fff"/><rect x="2" width="1" height="2" fill="#CE2B37"/></svg></span>Italiya</button>
+            <button type="button" class="pill" data-value="Latviya"><span class="pill-flag" aria-hidden="true"><svg viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice"><rect width="5" height="3" fill="#9E3039"/><rect y="1.2" width="5" height=".6" fill="#fff"/></svg></span>Latviya</button>
+            <button type="button" class="pill" data-value="Amerika"><span class="pill-flag" aria-hidden="true"><svg viewBox="0 0 19 10" preserveAspectRatio="xMinYMid slice"><rect width="19" height="10" fill="#B22234"/><rect y="0.769" width="19" height="0.769" fill="#fff"/><rect y="2.308" width="19" height="0.769" fill="#fff"/><rect y="3.846" width="19" height="0.769" fill="#fff"/><rect y="5.385" width="19" height="0.769" fill="#fff"/><rect y="6.923" width="19" height="0.769" fill="#fff"/><rect y="8.462" width="19" height="0.769" fill="#fff"/><rect width="7.6" height="5.385" fill="#3C3B6E"/></svg></span>AMERIKA</button>
             <button type="button" class="pill" data-value="Boshqa">🌍 Boshqa</button>
           </div>
           <input type="hidden" id="country" name="country" value="">
         </div>
         <div class="field">
-          <label for="message" >Xabar (ixtiyoriy)</label>
+          <label for="message">Xabar (ixtiyoriy)</label>
           <textarea id="message" name="message" rows="3" placeholder="Savollar uchun!"></textarea>
         </div>
         <button type="submit" class="btn btn-primary form-submit">Yuborish</button>
-        <p class="form-success" id="formSuccess" hidden>Rahmat! Tez orada siz bilan bog'lanamiz.</p>
+        <p class="form-success" id="formSuccess" role="status" hidden>Rahmat! Tez orada siz bilan bog'lanamiz.</p>
       </form>
-      <div class="contact-visual">
+      <div class="contact-visual" data-reveal="right">
         <!-- Ofis/manzil rasmingiz: rasmlar/ofis.jpg -->
         <div class="img-slot">
-          <img src="photos/contacttt.png" alt="Yo'lchi ofisi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <img src="photos/contacttt.png" alt="Yo'lchi ofisi" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
           <div class="img-fallback">
             <svg viewBox="0 0 24 24" width="30" height="30"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4 16 L9 12 L13 15 L16 12 L20 16" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
             <span>photos/contact.jpg</span>
@@ -358,7 +370,7 @@
               <span class="channel-text"><strong>+998 00 000 00 00</strong><span class="channel-sub">Telefon / WhatsApp</span></span>
             </a>
           </li>
-          <li>owner: Dilmurodov Azamatjon</li>
+          <li class="contact-owner">owner: Dilmurodov Azamatjon</li>
         </ul>
       </div>
     </div>
@@ -406,21 +418,11 @@
   </div>
 </footer>
 
-<script src="script.js"></script>
-<script>
-  (function () {
-    var slider = document.getElementById('aboutSlider');
-    if (!slider) return;
-    var slides = slider.querySelectorAll('.fade-slide');
-    var current = 0;
+<a href="#top" class="to-top" id="toTop" aria-label="Yuqoriga qaytish">
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
 
-    setInterval(function () {
-      slides[current].classList.remove('is-active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('is-active');
-    }, 3500);
-  })();
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
